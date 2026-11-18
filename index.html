@@ -1,0 +1,48 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Hotel Península</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0B2A5B"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--n:#0B2A5B;--b:#1D6FE8;--s:#EAF2FF;--l:#D5E3F8;--t:#16253D;--m:#5B6B84;--ok:#16A34A;--wn:#D97706;--er:#DC2626}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Plus Jakarta Sans",system-ui,sans-serif;color:var(--t);background:#F6F9FE}
+[hidden]{display:none!important}h1,h2,h3{margin:0}
+#login{min-height:100vh;display:grid;place-items:center;background:linear-gradient(160deg,var(--n),var(--b));padding:20px}
+#login form{background:#fff;border-radius:18px;padding:28px;width:100%;max-width:360px;display:grid;gap:12px}
+#login h1{color:var(--n);font-weight:800}
+input,select,textarea{font:inherit;padding:10px 12px;border:1px solid var(--l);border-radius:10px;background:#fff;width:100%;color:var(--t)}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--b);outline-offset:1px}
+label{display:grid;gap:4px;font-size:13px;color:var(--m);font-weight:600}
+.btn{background:var(--b);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer}
+.btn.o{background:var(--s);color:var(--n)}.btn.r{background:#FDECEC;color:var(--er)}.btn.sm{padding:6px 11px;font-size:13px}
+#app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+aside{background:var(--n);color:#fff;padding:20px 14px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh}
+aside h1{font-size:19px;font-weight:800;padding:4px 10px 18px}
+nav{display:grid;gap:4px}nav button{background:0;border:0;color:#BCD0F2;text-align:left;padding:11px 12px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer}
+nav button.on{background:var(--b);color:#fff}
+.side-b{margin-top:auto;display:grid;gap:8px}.side-b select{background:#12397A;color:#fff;border:0}.side-b .btn{background:#12397A}
+main{padding:24px;max-width:1100px;width:100%}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px;flex-wrap:wrap}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:18px}
+.kp div{background:#fff;border:1px solid var(--l);border-radius:14px;padding:16px;color:var(--m);font-size:13px}
+.kp b{display:block;font-size:24px;color:var(--n);font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--l);border-radius:14px;padding:14px;display:grid;gap:8px;align-content:start}
+.card h3{font-size:17px;color:var(--n)}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.m{color:var(--m);font-size:13px}
+.chip{padding:2px 10px;border-radius:99px;font-size:12px;font-weight:600;background:var(--s);color:var(--b)}
+.chip.ok{background:#E3F6EA;color:var(--ok)}.chip.wn{background:#FDF1DD;color:var(--wn)}.chip.er{background:#FDECEC;color:var(--er)}
+h2.s{font-size:16px;margin:20px 0 10px;color:var(--n)}
+dialog{border:0;border-radius:18px;padding:22px;width:min(560px,94vw);max-height:92vh}dialog::backdrop{background:#0b2a5b99}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:10px}.f .w{grid-column:1/-1}
+.rc{display:flex;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--s)}.rc input[type=checkbox]{width:auto}.rc input[type=number]{width:70px;margin-left:auto}
+#pr{display:none}
+@media(max-width:800px){#app{grid-template-columns:1fr}aside{position:fixed;inset:auto 0 0 0;height:auto;flex-direction:row;padding:6px 6px calc(6px + env(safe-area-inset-bottom));z-index:5}
+aside h1,.side-b{display:none}nav{grid-auto-flow:column;grid-auto-columns:1fr;width:100%}nav button{text-align:center;padding:10px 2px;font-size:13px}
+main{padding:16px 14px 90px}.f{grid-template-columns:1fr}}
+@media print{body>*:not(#pr){display:none!important}#pr{display:block;color:#000;font:13px/1.4 system-ui,sans-serif}#pr table{width:100%;border-collapse:collapse;margin:8px 0}
+#pr td,#pr th{padding:4px;border-bottom:1px solid #999;text-align:left}#pr td:last-child,#pr th:last-child{text-align:right}#pr.th{width:72mm;font-size:11px}.sg{margin-top:30px}}
+</style><style id="pg"></style></head><body>
+<section id="login"><form id="lf"><h1>Hotel Península</h1><span class="m">Entre para acessar o painel. O login fica salvo neste aparelho.</span>
+<label>E-mail<input id="em" type="email" autocomplete="username" required></label><label>Senha<input id="pw" type="password" autocomplete="current-password" required></label>
+<button class="btn">Entrar</button><span id="le" style="color:var(--er)"></span></form></section>
+<div id="app" hidden><aside><h1>Hotel Península</h1><nav><button data-v="painel">Painel</button><button data-v="quartos">Quartos</button><button data-v="reservas">Reservas</button><button data-v="hospedes">Hóspedes</button></nav>
+<div class="side-b"><label style="color:#BCD0F2">Papel de impressão<select id="paper"><option value="a">Folha A4</option><option value="t">Térmica 80 mm</option></select></label><button class="btn" data-a="out">Sair</button></div></aside><main id="main"></main></div>
+<dialog id="dlg"></dialog><div id="pr"></div><script type="module" src="app.js"></script></body></html>
